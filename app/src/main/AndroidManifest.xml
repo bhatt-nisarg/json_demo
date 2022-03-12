@@ -10,6 +10,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Json_demo">
         <activity
             android:name=".Json_okhttp"
@@ -21,16 +22,17 @@
             android:exported="false"/>
         <activity
             android:name=".Json_Retrofit"
-            android:exported="true" >
+            android:exported="false" >
+
+        </activity>
+        <activity
+            android:name=".JsonArray"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".JsonArray"
-            android:exported="false">
 
         </activity>
         <activity

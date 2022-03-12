@@ -2,6 +2,7 @@ package com.example.json_demo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +23,7 @@ public class JsonArray extends AppCompatActivity {
 
     private String TAG = JsonArray.class.getSimpleName();
     private ListView lv;
+
 
     ArrayList<HashMap<String,String>> contactList;
     @Override
@@ -48,21 +50,26 @@ public class JsonArray extends AppCompatActivity {
             Handler handler = new Handler();
 
             //Making request to url and getting response
-            String url = "http://api.androidhive.info/contacts/";
+            String url = "https://api.androidhive.info/contacts/";
+            Log.d("qwes",url);
             String jsonStr = handler.makeServiceCall(url);
             Log.e(TAG, "Response from url: " + jsonStr);
+            Log.d("anmb",jsonStr);
             if (jsonStr != null){
                 try {
 
                     JSONObject jsonObj = new JSONObject(jsonStr);
 
                     //getting Json Array node
-                    JSONArray contacts = jsonObj.getJSONArray(jsonStr);
+                    JSONArray contacts = jsonObj.getJSONArray("contacts");
+
+                    Log.d("lkjh",contacts.toString());
 
                     //looping through All Contacts
                     for (int i = 0;i<contacts.length();i++){
 
                         JSONObject c = contacts.getJSONObject(i);
+                        Log.d("ccccc",c.toString());
                         String id= c.getString("id");
                         String name = c.getString("name");
                         String email = c.getString("email");
@@ -75,7 +82,7 @@ public class JsonArray extends AppCompatActivity {
                         String home = phone.getString("home");
                         String office = phone.getString("office");
 
-                        //tmp hash map for single contact
+//                        //tmp hash map for single contact
                         HashMap<String,String> contact = new HashMap<>();
 
                         //adding each child node to hashmap key => value
@@ -83,6 +90,9 @@ public class JsonArray extends AppCompatActivity {
                         contact.put("name",name);
                         contact.put("email",email);
                         contact.put("mobile",mobile);
+                        Log.d("fghy", id + name );
+
+
 
                         //add contact to list
                         contactList.add(contact);
@@ -114,7 +124,7 @@ public class JsonArray extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-
+            Log.d("sdsdds", String.valueOf(contactList.size()));
             ListAdapter adapter = new SimpleAdapter(JsonArray.this,contactList,R.layout.list_item,new String[]{"email","mobile"},new int[]{R.id.email,R.id.mobile});
 
             lv.setAdapter(adapter);
