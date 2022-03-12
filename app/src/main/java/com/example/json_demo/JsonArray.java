@@ -94,7 +94,7 @@ public class JsonArray extends AppCompatActivity {
                         contact.put("mobile",mobile);
                         contact.put("home",home);
                         contact.put("office",office);
-                        Log.d("fghy", id + name );
+                        Log.d("fghy", id +"==" +  name  + "=="+ email+"==" + address  + "=="+ gender + " == " + mobile + "==" + home + "==" + office );
 
 
 
