@@ -89,7 +89,11 @@ public class JsonArray extends AppCompatActivity {
                         contact.put("id",id);
                         contact.put("name",name);
                         contact.put("email",email);
+                        contact.put("address",address);
+                        contact.put("gender",gender);
                         contact.put("mobile",mobile);
+                        contact.put("home",home);
+                        contact.put("office",office);
                         Log.d("fghy", id + name );
 
 
@@ -125,7 +129,7 @@ public class JsonArray extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
             Log.d("sdsdds", String.valueOf(contactList.size()));
-            ListAdapter adapter = new SimpleAdapter(JsonArray.this,contactList,R.layout.list_item,new String[]{"email","mobile"},new int[]{R.id.email,R.id.mobile});
+            ListAdapter adapter = new SimpleAdapter(JsonArray.this,contactList,R.layout.list_item,new String[]{"id","name","email","address","gender","mobile","home","office"},new int[]{R.id.id,R.id.name,R.id.email,R.id.address,R.id.gender,R.id.mobile,R.id.home,R.id.office});
 
             lv.setAdapter(adapter);
         }
