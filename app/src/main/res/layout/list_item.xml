@@ -43,7 +43,8 @@
             android:text="gender"
             android:textSize="15dp"
             style="@style/Textview"
-            android:layout_weight="0.4"/></LinearLayout>
+            android:layout_weight="0.4"/>
+    </LinearLayout>
         <TextView
 
             android:layout_marginLeft="21dp"

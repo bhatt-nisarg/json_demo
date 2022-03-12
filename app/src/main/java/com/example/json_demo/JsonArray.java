@@ -1,8 +1,7 @@
 package com.example.json_demo;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.ContentValues;
+import androidx.cardview.widget.CardView;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,19 +9,18 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+
 
 public class JsonArray extends AppCompatActivity {
 
     private String TAG = JsonArray.class.getSimpleName();
     private ListView lv;
+
 
 
     ArrayList<HashMap<String,String>> contactList;
@@ -33,6 +31,7 @@ public class JsonArray extends AppCompatActivity {
 
         contactList = new ArrayList<>();
         lv = (ListView) findViewById(R.id.list);
+
 
         new GetContacts().execute();
     }
@@ -82,7 +81,7 @@ public class JsonArray extends AppCompatActivity {
                         String home = phone.getString("home");
                         String office = phone.getString("office");
 
-//                        //tmp hash map for single contact
+                        //tmp hash map for single contact
                         HashMap<String,String> contact = new HashMap<>();
 
                         //adding each child node to hashmap key => value
@@ -102,11 +101,12 @@ public class JsonArray extends AppCompatActivity {
                         contactList.add(contact);
 
 
+
                     }
 
 
                 } catch (final JSONException e) {
-//                    e.printStackTrace();
+                    //e.printStackTrace();
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

@@ -5,7 +5,8 @@
       <map>
         <entry key="..\:/Android Project/json_demo/app/src/main/res/drawable/gradient.xml" value="0.1" />
         <entry key="..\:/Android Project/json_demo/app/src/main/res/layout/activity_json_array.xml" value="0.18" />
-        <entry key="..\:/Android Project/json_demo/app/src/main/res/layout/list_item.xml" value="0.22" />
+        <entry key="..\:/Android Project/json_demo/app/src/main/res/layout/list_item.xml" value="0.33" />
+        <entry key="..\:/Android Project/json_demo/app/src/main/res/layout/list_itemeven.xml" value="0.2427536231884058" />
         <entry key="..\:/Project/Project/json_demo/app/src/main/res/layout/activity_json_array.xml" value="0.21927083333333333" />
         <entry key="..\:/Project/Project/json_demo/app/src/main/res/layout/activity_json_ok_http.xml" value="0.15896739130434784" />
         <entry key="..\:/Project/Project/json_demo/app/src/main/res/layout/activity_json_okhttp.xml" value="0.15896739130434784" />
