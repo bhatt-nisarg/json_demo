@@ -20,7 +20,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Json_Retrofit extends AppCompatActivity {
-        //creating variable
+    //creating variable
     CardView card;
     ImageView retImg;
     TextView rname,rmode,rtrack;

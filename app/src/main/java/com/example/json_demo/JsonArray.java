@@ -16,11 +16,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-public class JsonArray extends AppCompatActivity {
+    public class JsonArray extends AppCompatActivity {
 
     private String TAG = JsonArray.class.getSimpleName();
     private ListView lv;
-
+    CardView cardeven,cardodd;
 
 
     ArrayList<HashMap<String,String>> contactList;
@@ -31,7 +31,8 @@ public class JsonArray extends AppCompatActivity {
 
         contactList = new ArrayList<>();
         lv = (ListView) findViewById(R.id.list);
-
+        cardeven = findViewById(R.id.cardeven);
+        cardodd = findViewById(R.id.cardodd);
 
         new GetContacts().execute();
     }
@@ -100,7 +101,7 @@ public class JsonArray extends AppCompatActivity {
                         //add contact to list
                         contactList.add(contact);
 
-
+                        Log.d("contactlist",contactList.toString());
 
                     }
 
@@ -129,10 +130,16 @@ public class JsonArray extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
             Log.d("sdsdds", String.valueOf(contactList.size()));
-            ListAdapter adapter = new SimpleAdapter(JsonArray.this,contactList,R.layout.list_item,new String[]{"id","name","email","address","gender","mobile","home","office"},new int[]{R.id.id,R.id.name,R.id.email,R.id.address,R.id.gender,R.id.mobile,R.id.home,R.id.office});
+
+            ListAdapter adapter = new MyListAdapter(JsonArray.this,contactList);
 
             lv.setAdapter(adapter);
         }
     }
+//    void evenentry(){
+//        ListAdapter adapter = new SimpleAdapter(JsonArray.this,contactList,R.layout.list_item,new String[]{"id","name","email","address","gender","mobile","home","office"},new int[]{R.id.evenid,R.id.evenname,R.id.evenemail,R.id.evenaddress,R.id.evengender,R.id.evenmobile,R.id.evenhome,R.id.evenoffice});
+//        lv.setAdapter(adapter);
+//SimpleAdapter(JsonArray.this,contactList,R.layout.list_item,new String[]{"id","name","email","address","gender","mobile","home","office"},new int[]{R.id.id,R.id.name,R.id.email,R.id.address,R.id.gender,R.id.mobile,R.id.home,R.id.office});
+//    }
 }
 

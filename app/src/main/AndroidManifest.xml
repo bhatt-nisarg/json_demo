@@ -16,17 +16,14 @@
             android:name=".Json_okhttp"
             android:exported="true" >
 
-
         </activity>
         <activity
             android:name=".Jsonparse_volley"
             android:exported="true">
-
         </activity>
         <activity
             android:name=".Json_Retrofit"
             android:exported="true" >
-
 
         </activity>
         <activity
@@ -37,7 +34,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".MainActivity"

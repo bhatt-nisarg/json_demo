@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardodd"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_margin="20dp"
@@ -106,6 +107,114 @@
         android:layout_height="wrap_content"
         android:id="@+id/office"
         style="@style/Textview"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardeven"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
+        android:elevation="8dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient">
+            <LinearLayout
+
+                android:id="@+id/linear2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                >
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/evengender"
+                    android:text="gender"
+                    android:textSize="15dp"
+                    style="@style/Textview"
+                    android:layout_weight="0.6"/>
+                <TextView
+                    android:gravity="end"
+                    android:textAllCaps="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:id="@+id/evenname"
+                    android:textSize="20sp"
+                    style="@style/Textview"
+                    android:layout_weight="0.4"/>
+
+            </LinearLayout>
+            <TextView
+
+                android:layout_marginRight="20dp"
+                android:layout_below="@id/linear2"
+                android:layout_alignParentEnd="true"
+                android:text="email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/evenemail"
+                android:textSize="14sp"
+                style="@style/Textview"/>
+
+            <TextView
+                android:layout_below="@id/evenoffice"
+                android:layout_marginRight="20dp"
+                android:gravity="end"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/evenid"
+                android:textAllCaps="true"
+                android:textSize="15sp"
+                android:text="id"
+                style="@style/Textview"/>
+
+            <TextView
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@id/evenemail"
+                android:text="address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/evenaddress"
+                style="@style/Textview"/>
+
+            <TextView
+
+                android:layout_marginLeft="20dp"
+                android:layout_below="@id/evenaddress"
+                android:text="mobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/evenmobile"
+                style="@style/Textview"/>
+            <TextView
+
+                android:text="home"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@id/evenmobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/evenhome"
+                style="@style/Textview"/>
+            <TextView
+                android:text="office"
+                android:layout_marginLeft="20dp"
+                android:layout_below="@id/evenhome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/evenoffice"
+                style="@style/Textview"/>
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>
